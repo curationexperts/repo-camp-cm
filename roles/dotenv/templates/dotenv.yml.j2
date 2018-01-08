@@ -1,0 +1,13 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# THIS IS AN ANSIBLE-MANAGED FILE. ALL CHANGES WILL BE OVERRIDEN IF CONFIG
+# MANAGER IS RUN. MAKE SURE YOU REFLECT CHANGES IN THE ANSIBLE SCRIPTS IF
+# THEY SHOULD BE MADE PERMANENT.
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+DATACITE_DOMAINS='"*"'
+DATACITE_HOST='"https://mds.test.datacite.org"'
+DATACITE_LOGIN=DATACITE.DCE
+DATACITE_PASSWORD=DOI4Mahonia
+DATACITE_PREFIX=10.24354
+SIDEKIQ_CONCURRENCY=5
+RAILS_HOST={{ [hostname, domain] | join('.') }}
+PROJECT_NAME={{ project_name }}
