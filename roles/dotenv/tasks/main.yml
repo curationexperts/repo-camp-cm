@@ -1,0 +1,14 @@
+---
+# ROLE: dotenv
+# roles/dotenv/tasks/main.yml
+#
+# Copies the .env.production file to where capistrano expects it
+# Usage:
+#    - { role: dotenv }
+#
+# Expects a dotenv.yml.j2 file in templates, which should include all environment
+# variables this project needs.
+
+- name: create dotenv config
+  become: yes
+  template: src=dotenv.yml.j2 dest=/opt/{{ project_name }}/shared/.env.production owner=deploy group=deploy backup=no
