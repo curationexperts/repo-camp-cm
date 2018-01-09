@@ -19,6 +19,8 @@
       - https://github.com/little9.keys
       - https://github.com/no-reply.keys
       - https://github.com/bess.keys
+      - https://github.com/val99erie.keys
+      - https://github.com/jenlindner.keys
     db_user: 'demo_db_user'
     db_pass: 'demo_db_password'
     hostname: 'mahonia'
