@@ -29,6 +29,7 @@
     - { role: set_hostname }
     - { role: sshd_config }
     - { role: setup_logrotation }
+    - { role: clamav }
     - { role: ruby, ruby_version: '2.4.2', ruby_sha_256: '93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c' }
     - { role: fedora, fedora_version: '4.7.1' }
     - { role: solr, solr_version: '6.6.2' }
