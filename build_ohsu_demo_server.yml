@@ -1,4 +1,4 @@
-- hosts: ohsu_demo_servers
+- hosts: all
   name: ensure python is installed for ansible
   user: ubuntu
   gather_facts: false
@@ -7,9 +7,9 @@
         raw: sudo apt-get update
       - name: install python for ansible
         raw: sudo apt-get -y install python-simplejson
-
-- hosts: ohsu_demo_servers
-  name: configure demo server
+    
+- hosts: all
+  name: configure server
   user: ubuntu
   gather_facts: true
   vars:
@@ -23,11 +23,9 @@
       - https://github.com/jenlindner.keys
     db_user: 'demo_db_user'
     db_pass: 'demo_db_password'
-    hostname: 'mahonia'
-    domain: 'curationexperts.com'
   roles:
     - { role: packages }
-    - { role: set_timezone, timezone: America/Chicago }
+    - { role: set_timezone, timezone: America/Los_Angeles }
     - { role: set_hostname }
     - { role: sshd_config }
     - { role: setup_logrotation }
@@ -43,3 +41,4 @@
     - { role: capistrano_setup }
     - { role: dotenv }
     - { role: first_deploy }
+    - { role: restart }
