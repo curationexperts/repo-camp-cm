@@ -20,6 +20,5 @@ Clone this repo to your local system to build OHSU servers on AWS.
 1. Use the AWS web client to create an Ubuntu 16.04 server. Record the IP it was assigned. Ensure you have the ssh key required to access it.
 1.  `git clone --recurse https://github.com/bess/ohsu-cm.git`
 1.  `cd ohsu-cm`
-1. Put your new server's IP in the `hosts` file. Create a new section for it, if appropriate. E.g., you might want to record separately which are your production servers vs your QA or staging servers.
-1. Edit `build_ohsu_demo_server.yml` to tell it to act on your new hosts section, if necessary.
+1. Put your new server's IP in the ansible `hosts` file in this repo. Create a new section for it, if appropriate. E.g., you might want to record separately which are your production servers vs your QA or staging servers. Each system will need a `hostname` and `domain` variable. 
 1. Run the build: `ansible-playbook -i hosts --private-key path/to/your/key/here build_ohsu_demo_server.yml`
