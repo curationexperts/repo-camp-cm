@@ -1,6 +1,7 @@
 # DCE AWS
 [dce:children]
 sandbox
+shib_integration
 
 [dce:vars]
 domain=curationexperts.com
@@ -12,34 +13,44 @@ domain=curationexperts.com
 [sandbox:vars]
 hostname=mahonia
 
+[shib_integration]
+lorca.curationexperts.com
+
+[shib_integration:vars]
+hostname=lorca
+shibboleth_host=bet.curationexperts.com
+server_admin_email=systems@curationexperts.com
+
 # OHSU AWS
 # samvera-dev has public addr 34.209.202.103 and private addr 10.85.4.110
 # samvera-stage has public addr 52.42.114.250 and private addr 10.85.4.6
 # samvera-prod has public addr 54.148.202.35 and private addr 10.85.4.77
 
 [ohsu:children]
-dev
+qa
 stage
 prod
 
 [ohsu:vars]
-domain=ohsu.edu
+domain=curationexperts.com
 ansible_user=bess
+shibboleth_host=bet.curationexperts.com
+server_admin_email=systems@curationexperts.com
 
-[dev]
+[qa]
 34.209.202.103
 
-[dev:vars]
-hostname=samvera-dev
+[qa:vars]
+hostname=qa-ohsu
 
 [stage]
 52.42.114.250
 
 [stage:vars]
-hostname=samvera-stage
+hostname=staging-ohsu
 
 [prod]
 54.148.202.35
 
 [prod:vars]
-hostname=samvera-prod
+hostname=ohsu

@@ -8,7 +8,7 @@
       - name: install python for ansible
         raw: sudo apt-get -y install python-simplejson
     
-- hosts: all
+- hosts: ohsu
   name: configure server
   user: ubuntu
   gather_facts: true
@@ -36,9 +36,15 @@
     - { role: fits, fits_version: '0.8.4' }
     - { role: postgres, postgres_pass: 'G{BkCZ7^fsDg2su' }
     - { role: apache, passenger_ver: '5.1.11'}
+    - { role: apache_with_mod_ssl }
+    - { role: dce_ssl }
     - { role: imagemagick, imagemagick_ver: '7.0.7', gs_ver: '9.19', openjpg_ver: '2.1.0', libtiff_ver: '4.0.5', libpng_ver: '1.6.28' }
     - { role: ffmpeg, ffmpeg_version: '3.4' }
     - { role: capistrano_setup }
     - { role: dotenv }
     - { role: first_deploy }
+    - { role: force_ssl }
     - { role: restart }
+    - { role: shibboleth-sp }
+
+    
