@@ -1,3 +1,40 @@
+# OHSU AWS
+# samvera-dev has public addr 34.209.202.103 and private addr 10.85.4.110
+# samvera-stage has public addr 52.42.114.250 and private addr 10.85.4.6
+# samvera-prod has public addr 54.148.202.35 and private addr 10.85.4.77
+
+[ohsu:children]
+qa
+stage
+prod
+
+[ohsu:vars]
+domain=curationexperts.com
+ansible_user=bess
+shibboleth_host=bet.curationexperts.com
+server_admin_email=systems@curationexperts.com
+
+[qa]
+34.209.202.103
+
+[qa:vars]
+hostname=qa-ohsu
+
+[stage]
+52.42.114.250
+
+[stage:vars]
+hostname=staging-ohsu
+
+[prod]
+54.148.202.35
+
+[prod:vars]
+hostname=ohsu
+
+###################
+# This section can be removed once DCE is no longer
+# working on this project
 # DCE AWS
 [dce:children]
 sandbox
@@ -6,40 +43,7 @@ sandbox
 domain=curationexperts.com
 
 [sandbox]
-# 54.198.98.64
 54.166.129.254
 
 [sandbox:vars]
 hostname=mahonia
-
-# OHSU AWS
-# samvera-dev has public addr 34.209.202.103 and private addr 10.85.4.110
-# samvera-stage has public addr 52.42.114.250 and private addr 10.85.4.6
-# samvera-prod has public addr 54.148.202.35 and private addr 10.85.4.77
-
-[ohsu:children]
-dev
-stage
-prod
-
-[ohsu:vars]
-domain=ohsu.edu
-ansible_user=bess
-
-[dev]
-34.209.202.103
-
-[dev:vars]
-hostname=samvera-dev
-
-[stage]
-52.42.114.250
-
-[stage:vars]
-hostname=samvera-stage
-
-[prod]
-54.148.202.35
-
-[prod:vars]
-hostname=samvera-prod

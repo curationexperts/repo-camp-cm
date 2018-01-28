@@ -1,0 +1,10 @@
+- name: re-create apache vhosts file
+  become: yes
+  template: src=apache_vhost.j2 dest=/etc/apache2/sites-enabled/{{ project_name }}.conf owner=root group=root backup=yes force=yes
+
+- name: restart apache
+  become: yes
+  service:
+    name: apache2
+    enabled: yes
+    state: restarted
