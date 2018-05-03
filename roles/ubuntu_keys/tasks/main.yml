@@ -1,0 +1,9 @@
+---
+# Create accounts 
+
+- name: add keys for ubuntu user
+  become: yes
+  authorized_key: user=ubuntu key={{ item }} exclusive=no state=present
+  with_items:
+    - "{{ keys_to_add }}"
+  when: keys_to_add is defined and keys_to_add != None

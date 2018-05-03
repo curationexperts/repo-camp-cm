@@ -22,28 +22,33 @@
       - https://github.com/bess.keys
       - https://github.com/val99erie.keys
       - https://github.com/jenlindner.keys
+      - https://github.com/seanupton.keys
+      - https://github.com/malantonio.keys
+      - https://github.com/hardyoyo.keys
+      - https://github.com/tpendragon.keys
     db_user: 'demo_db_user'
     db_pass: 'demo_db_password'
   roles:
-    - { role: packages }
-    - { role: set_timezone, timezone: America/Chicago }
-    - { role: set_hostname }
-    - { role: sshd_config }
-    - { role: setup_logrotation }
-    - { role: clamav }
-    - { role: ruby, ruby_version: '2.4.2', ruby_sha_256: '93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c' }
-    - { role: fedora, fedora_version: '4.7.5' }
-    - { role: solr, solr_version: '6.6.2' }
-    - { role: fits, fits_version: '1.0.5' }
-    - { role: postgres, postgres_pass: 'insecure!' }
-    - { role: apache, passenger_ver: '5.1.11'}
-    - { role: imagemagick, imagemagick_ver: '7.0.7', gs_ver: '9.19', openjpg_ver: '2.1.0', libtiff_ver: '4.0.5', libpng_ver: '1.6.28' }
-    - { role: ffmpeg, ffmpeg_version: '3.4' }
-    - { role: capistrano_setup }
-    - { role: dotenv }
-    - { role: sidekiq }
-    - { role: first_deploy }
-    - { role: force_ssl }
-    - { role: restart }
+    # - { role: packages }
+    # - { role: set_timezone, timezone: America/Chicago }
+    # - { role: set_hostname }
+    # - { role: sshd_config }
+    - { role: ubuntu_keys }
+    # - { role: setup_logrotation }
+    # - { role: clamav }
+    # - { role: ruby, ruby_version: '2.4.2', ruby_sha_256: '93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c' }
+    # - { role: fedora, fedora_version: '4.7.5' }
+    # - { role: solr, solr_version: '6.6.2' }
+    # - { role: fits, fits_version: '1.0.5' }
+    # - { role: postgres, postgres_pass: 'insecure!' }
+    # - { role: apache, passenger_ver: '5.1.11'}
+    # # - { role: imagemagick, imagemagick_ver: '7.0.7', gs_ver: '9.19', openjpg_ver: '2.1.0', libtiff_ver: '4.0.5', libpng_ver: '1.6.28' }
+    # # - { role: ffmpeg, ffmpeg_version: '3.4' }
+    # - { role: capistrano_setup }
+    # - { role: dotenv }
+    # - { role: sidekiq }
+    # - { role: first_deploy }
+    # - { role: force_ssl }
+    # - { role: restart }
 
     
