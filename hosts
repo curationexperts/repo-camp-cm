@@ -1,15 +1,45 @@
 ###################
-# This section can be removed once DCE is no longer
-# working on this project
 # DCE AWS
 [dce:children]
 sandbox
+asc
 
 [dce:vars]
 domain=curationexperts.com
+server_admin_email = systems@curationexperts.com
 
 [sandbox]
 184.73.37.198
 
 [sandbox:vars]
 hostname=ohsu2018
+
+
+[asc:children]
+asc1
+asc2
+asc3
+
+[asc1]
+18.191.29.73
+
+[asc1:vars]
+hostname = asc1
+project_name = asc2018
+log_path = ./build_logs/asc1.log
+
+[asc2]
+13.59.75.69
+
+[asc2:vars]
+hostname = asc2
+project_name = asc2018
+log_path = ./build_logs/asc2.log
+
+[asc3]
+18.191.6.231
+
+[asc3:vars]
+hostname = asc3
+project_name = asc2018
+log_path = ./build_logs/asc3.log
